@@ -1,3 +1,9 @@
+import Category from "./components/home/Category";
+
 export default function Home() {
-  return <div>Ana Sayfa</div>;
+  return (
+    <div>
+      <Category />
+    </div>
+  );
 }
