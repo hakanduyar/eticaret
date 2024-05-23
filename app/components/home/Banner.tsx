@@ -8,6 +8,7 @@ const Banner = () => {
           src={"/hepsiburada-da-pesin-fiyatina-2-tak2023-11-01.webp"}
           fill
           alt=""
+          className="object-cover"
         />
       </div>
     </div>
