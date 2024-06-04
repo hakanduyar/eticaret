@@ -2,8 +2,39 @@
 
 import Image from "next/image";
 import PageContainer from "../containers/PageContainer";
+import Counter from "../general/Counter";
+import { useState } from "react";
+
+export type CardProductProps = {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  quantity: number;
+  image: string;
+  inStock: boolean;
+};
 
 const DetailClient = ({ product }: { product: any }) => {
+  const [cardProduct, setCardProduct] = useState<CardProductProps>({
+    id: product.id,
+    name: product.name,
+    description: product.description,
+    price: product.price,
+    quantity: 1,
+    image: product.image,
+    inStock: product.inStock,
+  });
+
+  const increaseFunc = () => {
+    if (cardProduct.quantity == 10) return;
+    setCardProduct((prev) => ({ ...prev, quantity: prev.quantity + 1 }));
+  };
+  const decreaseFunc = () => {
+    if (cardProduct.quantity == 1) return;
+    setCardProduct((prev) => ({ ...prev, quantity: prev.quantity - 1 }));
+  };
+
   return (
     <div className="my-10">
       <PageContainer>
@@ -23,6 +54,11 @@ const DetailClient = ({ product }: { product: any }) => {
                 <div className="text-red-500">Ürün Stokta Bulunmamakta</div>
               )}
             </div>
+            <Counter
+              increaseFunc={increaseFunc}
+              decreaseFunc={decreaseFunc}
+              cardProduct={cardProduct}
+            />
           </div>
         </div>
       </PageContainer>
