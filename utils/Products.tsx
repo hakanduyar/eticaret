@@ -8,7 +8,7 @@ export const products = [
     category: "Phone",
     inStock: true,
     image:
-      "https://firebasestorage.googleapis.com/v0/b/ecommerce-shop-cc542.appspot.com/o/products%2F1688622161445-iphone14-white.png?alt=media&token=fe2065e5-fdfe-4a6f-baa6-380b5fad90b8",
+      "https://www.apple.com/newsroom/images/2023/09/apple-debuts-iphone-15-and-iphone-15-plus/tile/Apple-iPhone-15-lineup-hero-230912.jpg.news_app_ed.jpg",
     reviews: [],
   },
   {
@@ -21,7 +21,7 @@ export const products = [
     category: "Accesories",
     inStock: true,
     image:
-      "https://firebasestorage.googleapis.com/v0/b/ecommerce-shop-cc542.appspot.com/o/products%2F1688622161445-iphone14-white.png?alt=media&token=fe2065e5-fdfe-4a6f-baa6-380b5fad90b8",
+      "https://www.apple.com/newsroom/images/2023/09/apple-debuts-iphone-15-and-iphone-15-plus/tile/Apple-iPhone-15-lineup-hero-230912.jpg.news_app_ed.jpg",
     reviews: [
       {
         id: "64a65a6158b470c6e06959ee",
@@ -36,7 +36,7 @@ export const products = [
           email: "example@gmail.com",
           emailVerified: null,
           image:
-            "https://lh3.googleusercontent.com/a/AAcHTteOiCtILLBWiAoolIW9PJH-r5825pBDl824_8LD=s96-c",
+            "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png",
           hashedPassword: null,
           createdAt: "2023-05-30T08:08:53.979Z",
           updatedAt: "2023-05-30T08:08:53.979Z",
@@ -56,7 +56,7 @@ export const products = [
           email: "example@gmail.com",
           emailVerified: null,
           image:
-            "https://lh3.googleusercontent.com/a/AAcHTteOiCtILLBWiAoolIW9PJH-r5825pBDl824_8LD=s96-c",
+            "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png",
           hashedPassword: null,
           createdAt: "2023-05-30T08:08:53.979Z",
           updatedAt: "2023-05-30T08:08:53.979Z",
@@ -75,7 +75,7 @@ export const products = [
     category: "Phone",
     inStock: true,
     image:
-      "https://firebasestorage.googleapis.com/v0/b/ecommerce-shop-cc542.appspot.com/o/products%2F1688622161445-iphone14-white.png?alt=media&token=fe2065e5-fdfe-4a6f-baa6-380b5fad90b8",
+      "https://www.apple.com/newsroom/images/2023/09/apple-debuts-iphone-15-and-iphone-15-plus/tile/Apple-iPhone-15-lineup-hero-230912.jpg.news_app_ed.jpg",
     reviews: [
       {
         id: "6499b4887402b0efd394d8f3",
@@ -90,7 +90,7 @@ export const products = [
           email: "example1@gmail.com",
           emailVerified: null,
           image:
-            "https://lh3.googleusercontent.com/a/AAcHTtcuRLwWi1vPKaQOcJlUurlhRAIIq2LgYccE8p32=s96-c",
+            "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png",
           hashedPassword: null,
           createdAt: "2023-06-26T15:40:52.558Z",
           updatedAt: "2023-06-26T15:40:52.558Z",
@@ -110,7 +110,7 @@ export const products = [
           email: "example@gmail.com",
           emailVerified: null,
           image:
-            "https://lh3.googleusercontent.com/a/AAcHTteOiCtILLBWiAoolIW9PJH-r5825pBDl824_8LD=s96-c",
+            "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png",
           hashedPassword: null,
           createdAt: "2023-05-30T08:08:53.979Z",
           updatedAt: "2023-05-30T08:08:53.979Z",
@@ -129,7 +129,7 @@ export const products = [
     category: "Accesories",
     inStock: true,
     image:
-      "https://firebasestorage.googleapis.com/v0/b/ecommerce-shop-cc542.appspot.com/o/products%2F1688622161445-iphone14-white.png?alt=media&token=fe2065e5-fdfe-4a6f-baa6-380b5fad90b8",
+      "https://www.apple.com/newsroom/images/2023/09/apple-debuts-iphone-15-and-iphone-15-plus/tile/Apple-iPhone-15-lineup-hero-230912.jpg.news_app_ed.jpg",
     reviews: [],
   },
   {
@@ -142,7 +142,7 @@ export const products = [
     category: "Watch",
     inStock: true,
     image:
-      "https://firebasestorage.googleapis.com/v0/b/ecommerce-shop-cc542.appspot.com/o/products%2F1688622161445-iphone14-white.png?alt=media&token=fe2065e5-fdfe-4a6f-baa6-380b5fad90b8",
+      "https://www.apple.com/newsroom/images/2023/09/apple-debuts-iphone-15-and-iphone-15-plus/tile/Apple-iPhone-15-lineup-hero-230912.jpg.news_app_ed.jpg",
     reviews: [],
   },
 ];
