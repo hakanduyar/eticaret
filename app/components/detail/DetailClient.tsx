@@ -5,6 +5,9 @@ import PageContainer from "../containers/PageContainer";
 import Counter from "../general/Counter";
 import { useState } from "react";
 import { Rating } from "@mui/material";
+import Button from "../general/Button";
+import Comment from "./Comment";
+import Heading from "../general/Heading";
 
 export type CardProductProps = {
   id: string;
@@ -27,6 +30,8 @@ const DetailClient = ({ product }: { product: any }) => {
     inStock: product.inStock,
   });
 
+  console.log(product, "product");
+
   const increaseFunc = () => {
     if (cardProduct.quantity == 10) return;
     setCardProduct((prev) => ({ ...prev, quantity: prev.quantity + 1 }));
@@ -44,11 +49,16 @@ const DetailClient = ({ product }: { product: any }) => {
     <div className="my-10">
       <PageContainer>
         <div className="block md:flex gap-10 justify-center">
-          <div className="relative h-[400px] w-[400px] ">
-            <Image src={product?.image} fill alt="" />
+          <div className="relative h-[300px] w-full md:h-[400px] md:w-[400px] flex justify-center items-center mx-auto">
+            <Image
+              src={product?.image}
+              fill
+              alt=""
+              className="object-contain"
+            />
           </div>
-          <div className="w-1/2 space-y-3 ">
-            <div className="text-xl md:text-2xl">{product?.name}</div>
+          <div className="w-full md:w-1/2 space-y-3 p-4">
+            <div className="text-lg md:text-2xl">{product?.name}</div>
             <div className="flex justify-between items-center">
               <div className="text-lg md:text-2xl text-orange-500 font-bold">
                 {product.price}₺
@@ -69,12 +79,21 @@ const DetailClient = ({ product }: { product: any }) => {
                 <div className="text-red-500">Ürün Stokta Bulunmamakta</div>
               )}
             </div>
-            <Counter
-              increaseFunc={increaseFunc}
-              decreaseFunc={decreaseFunc}
-              cardProduct={cardProduct}
-            />
+            <div className="flex   gap-5">
+              <Counter
+                increaseFunc={increaseFunc}
+                decreaseFunc={decreaseFunc}
+                cardProduct={cardProduct}
+              />
+              <Button text="Sepete Ekle" small onClick={() => {}} />
+            </div>
           </div>
+        </div>
+        <Heading text="Yorumlar" />
+        <div className="w-full space-y-3 p-4">
+          {product?.reviews?.map((prd: any) => (
+            <Comment key={prd.id} prd={prd} />
+          ))}
         </div>
       </PageContainer>
     </div>
