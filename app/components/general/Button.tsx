@@ -15,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   small,
   outline,
   disabled,
+  icon: Icon,
 }) => {
   return (
     <button
@@ -24,6 +25,7 @@ const Button: React.FC<ButtonProps> = ({
       }`}
       onClick={onClick}
     >
+      {Icon && <Icon />}
       {text}
     </button>
   );
