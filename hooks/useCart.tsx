@@ -2,7 +2,7 @@
 import { createContext, useState } from "react";
 
 interface CartContextProps {
-  productCardQty: number;
+  productCartQty: number;
 }
 
 const CartContext = createContext<CartContextProps | null>(null);
@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const CartContextProvider = (props: Props) => {
-  const [productCartQty, setProductCardQty] = useState(0);
+  const [productCartQty, setProductCartQty] = useState(0);
 
   let value = {
     productCartQty,
