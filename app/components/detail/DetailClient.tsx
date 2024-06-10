@@ -8,6 +8,7 @@ import { Rating } from "@mui/material";
 import Button from "../general/Button";
 import Comment from "./Comment";
 import Heading from "../general/Heading";
+import useCart from "@/hooks/useCart";
 
 export type CardProductProps = {
   id: string;
@@ -20,6 +21,8 @@ export type CardProductProps = {
 };
 
 const DetailClient = ({ product }: { product: any }) => {
+  const { productCartQty, addToBasket, cartPrdcts } = useCart();
+
   const [cardProduct, setCardProduct] = useState<CardProductProps>({
     id: product.id,
     name: product.name,
@@ -30,7 +33,7 @@ const DetailClient = ({ product }: { product: any }) => {
     inStock: product.inStock,
   });
 
-  console.log(product, "product");
+  console.log(cartPrdcts, "cartPrdcts");
 
   const increaseFunc = () => {
     if (cardProduct.quantity == 10) return;
@@ -85,7 +88,11 @@ const DetailClient = ({ product }: { product: any }) => {
                 decreaseFunc={decreaseFunc}
                 cardProduct={cardProduct}
               />
-              <Button text="Sepete Ekle" small onClick={() => {}} />
+              <Button
+                text="Sepete Ekle"
+                small
+                onClick={() => addToBasket(cardProduct)}
+              />
             </div>
           </div>
         </div>
