@@ -3,7 +3,6 @@ import { Rating } from "@mui/material";
 import { RxAvatar } from "react-icons/rx";
 
 const Comment = ({ prd }: { prd: any }) => {
-  console.log(prd, "prd");
   return (
     <div className="border w-full md:w-1/3 p-2 rounded-lg">
       <div className="flex items-center justify-between">
