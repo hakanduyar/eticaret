@@ -5,7 +5,7 @@ import PageContainer from "../containers/PageContainer";
 import Image from "next/image";
 import { AiFillDelete } from "react-icons/ai";
 const CartClient = () => {
-  const { cartPrdcts } = useCart();
+  const { cartPrdcts, removeFromCart } = useCart();
 
   console.log(cartPrdcts, "cartPrdcts");
   if (!cartPrdcts || cartPrdcts.length == 0)
@@ -42,7 +42,7 @@ const CartClient = () => {
                 <AiFillDelete
                   size={20}
                   className="w-1/5 cursor-pointer text-red-600"
-                  onClick={() => {}}
+                  onClick={() => removeFromCart(cart)}
                 />
               </div>
             </div>
