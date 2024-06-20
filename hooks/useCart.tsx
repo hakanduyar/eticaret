@@ -7,11 +7,13 @@ import {
   useEffect,
   useState,
 } from "react";
+import toast from "react-hot-toast";
 
 interface CartContextProps {
   productCartQty: number;
   cartPrdcts: CardProductProps[] | null;
   addToBasket: (product: CardProductProps) => void;
+  removeFromCart: (product: CardProductProps) => void;
 }
 
 const CartContext = createContext<CartContextProps | null>(null);
@@ -39,9 +41,27 @@ export const CartContextProvider = (props: Props) => {
         } else {
           updatedCart = [product];
         }
+        toast.success("Ürün Sepete Eklendi...");
+
         localStorage.setItem("cart", JSON.stringify(updatedCart));
         return updatedCart;
       });
+    },
+    [cartPrdcts]
+  );
+
+  const removeFromCart = useCallback(
+    (product: CardProductProps) => {
+      if (cartPrdcts) {
+        const filteredProducts = cartPrdcts.filter(
+          (cart) => cart.id !== product.id
+        );
+
+        setCartPrdcts(filteredProducts);
+        toast.success("Ürün Sepetten Silindi...");
+
+        localStorage.setItem("cart", JSON.stringify(filteredProducts));
+      }
     },
     [cartPrdcts]
   );
@@ -50,6 +70,7 @@ export const CartContextProvider = (props: Props) => {
     productCartQty,
     addToBasket,
     cartPrdcts,
+    removeFromCart,
   };
   return <CartContext.Provider value={value} {...props} />;
 };
