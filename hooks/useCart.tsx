@@ -14,6 +14,7 @@ interface CartContextProps {
   cartPrdcts: CardProductProps[] | null;
   addToBasket: (product: CardProductProps) => void;
   removeFromCart: (product: CardProductProps) => void;
+  removeCart: () => void;
 }
 
 const CartContext = createContext<CartContextProps | null>(null);
@@ -30,6 +31,12 @@ export const CartContextProvider = (props: Props) => {
     let getItem: any = localStorage.getItem("cart");
     let getItemParse: CardProductProps[] | null = JSON.parse(getItem);
     setCartPrdcts(getItemParse);
+  }, []);
+
+  const removeCart = useCallback(() => {
+    setCartPrdcts(null);
+    toast.success("Sepet Temizlendi...");
+    localStorage.setItem("cart", JSON.stringify(null));
   }, []);
 
   const addToBasket = useCallback(
@@ -71,6 +78,7 @@ export const CartContextProvider = (props: Props) => {
     addToBasket,
     cartPrdcts,
     removeFromCart,
+    removeCart,
   };
   return <CartContext.Provider value={value} {...props} />;
 };
