@@ -5,11 +5,13 @@ import PageContainer from "../containers/PageContainer";
 import Image from "next/image";
 import { AiFillDelete } from "react-icons/ai";
 const CartClient = () => {
-  const { cartPrdcts, removeFromCart } = useCart();
+  const { cartPrdcts, removeFromCart, removeCart } = useCart();
 
   console.log(cartPrdcts, "cartPrdcts");
   if (!cartPrdcts || cartPrdcts.length == 0)
     return <div>Sepetinizde Ürün Bulunmamaktadır...</div>;
+
+  // let cartPrdctsTotal = cartPrdcts.reduce((acc: any, item:))
 
   return (
     <div className="my-3 md:my-10">
@@ -19,7 +21,9 @@ const CartClient = () => {
           <div className="w-1/5">Ürün Adı</div>
           <div className="w-1/5">Ürün Miktarı</div>
           <div className="w-1/5">Ürün Fiyatı</div>
-          <div className="w-1/5"></div>
+          <div className="w-1/5 underline">
+            <button onClick={() => removeCart()}>Sepeti Sil</button>
+          </div>
         </div>
         <div className="space-y-4">
           {cartPrdcts.map((cart) => (
@@ -47,6 +51,11 @@ const CartClient = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div>
+          <div className="text-xl md:text-2xl font-bold text-end text-orange-600">
+            1000₺
+          </div>
         </div>
       </PageContainer>
     </div>
