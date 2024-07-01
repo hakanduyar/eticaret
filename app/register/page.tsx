@@ -1,7 +1,7 @@
 import React from "react";
 import RegisterClient from "../components/auth/RegisterClient";
 
-const Register = () => {
+const Register = (asd) => {
   return (
     <div>
       <RegisterClient />
