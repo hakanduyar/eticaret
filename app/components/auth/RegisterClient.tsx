@@ -1,5 +1,6 @@
 "use client";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
 
 import { register } from "module";
 import AuthContainer from "../containers/AuthContainer";
@@ -19,7 +20,7 @@ const RegisterClient = () => {
 
   return (
     <AuthContainer>
-      <div className="w-full md:w-[500px] p-3 shadow-lg rounded-md">
+      <div className="w-full my-6 md:w-[500px] p-3 shadow-lg rounded-md">
         <Heading text="Register" center />
         <Input
           placeholder="Ad"
@@ -45,9 +46,15 @@ const RegisterClient = () => {
           errors={errors}
           required
         />
-        <Button text="Kayıt Ol" outline onClick={onSubmit()} />
-        <div>OR</div>
-        <Button text="Google ile Üye Ol" outline onClick={() => {}} />
+        <Button text="Kayıt Ol" outline onClick={handleSubmit(onSubmit)} />
+        <div className="text-center my-2 font-bold text-lg">OR</div>
+        
+        <Button
+          text="Google ile Üye Ol"
+          icon={FcGoogle}
+          outline
+          onClick={() => {}}
+        />
       </div>
     </AuthContainer>
   );
