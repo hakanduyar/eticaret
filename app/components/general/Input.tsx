@@ -23,7 +23,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <input
-      className={`h-12 p-3 rounded-md outline-none my-3 ${
+      className={`w-full h-12 p-3 rounded-md outline-none my-2 ${
         errors[id] ? "border border-red-500" : "border border-slate-300"
       }`}
       id={id}
