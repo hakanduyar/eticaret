@@ -40,13 +40,13 @@ const LoginClient = () => {
           required
         />
         <Button text="Giriş Yap" outline onClick={handleSubmit(onSubmit)} />
-        <div className="text-center my-2 font-bold text-lg">OR</div>
         <div className="text-center my-2 text-sm">
-          Hala kayıt olmadıysan{" "}
+          Hala Kayıt Olmadıysan{" "}
           <Link className="underline" href="register">
             buraya tıkla{" "}
           </Link>
         </div>
+        <div className="text-center my-2 font-bold text-lg">OR</div>
         <Button
           text="Google ile Giriş Yap"
           icon={FcGoogle}
