@@ -8,6 +8,7 @@ import Heading from "../general/Heading";
 import Input from "../general/Input";
 import { error } from "console";
 import Button from "../general/Button";
+import Link from "next/link";
 
 const RegisterClient = () => {
   const {
@@ -47,8 +48,14 @@ const RegisterClient = () => {
           required
         />
         <Button text="Kayıt Ol" outline onClick={handleSubmit(onSubmit)} />
+        <div className="text-center my-2 text-sm">
+          Zaten Hesabın Varsa{" "}
+          <Link className="underline" href="login">
+            giriş yap{" "}
+          </Link>
+        </div>
         <div className="text-center my-2 font-bold text-lg">OR</div>
-        
+
         <Button
           text="Google ile Üye Ol"
           icon={FcGoogle}
